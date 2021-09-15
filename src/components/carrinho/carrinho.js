@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BotaoCarrinho from './produto-carrinho';
+import ProdutoCarrinho from './produto-carrinho';
 // import TituloInput from './inputs';
 
 const ContainerCarrinho = styled.div`
@@ -13,13 +13,20 @@ const ContainerCarrinho = styled.div`
 `
 
 class Carrinho extends React.Component {
+    state= {
+        // produtos: [
+        //     {}
+        // ]
+        valorTotal: '0,00',
+
+    }
     render() {
         return (
         <ContainerCarrinho>
             <h2>Carrinho:</h2>
-            <BotaoCarrinho />
+            <ProdutoCarrinho />
             <hr />
-            <p>Valor total: R$</p>
+            <p>Valor total: R$ {this.state.valorTotal}</p>
         </ContainerCarrinho>
         )
     }

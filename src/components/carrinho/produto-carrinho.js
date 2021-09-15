@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TextoTituloInput = styled.p `
-    margin: 1px;
-`
 
 const ContainerInput = styled.div `
     display: flex;
@@ -11,14 +8,14 @@ const ContainerInput = styled.div `
     align-items: center;
 `
 
-function BotaoCarrinho(props){
+function ProdutoCarrinho(props){
     return (
         <ContainerInput >
             <p>1x</p>
             <p>Produto 3</p>
-            <button>Remover</button>
+            <button /*onClick={função de remover item}*/>Remover</button>
         </ContainerInput >
     )
 }
 
-export default BotaoCarrinho;
+export default ProdutoCarrinho;
