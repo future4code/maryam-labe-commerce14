@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Filtro from './components/filtro/filtro.js';
+import Carrinho from './components/carrinho/carrinho.js';
+import styled from 'styled-components';
+
+const LayoutItens = styled.div `
+  display: flex;
+  justify-content: space-between;
+`
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LayoutItens>
+      <Filtro />
+
+      <Carrinho />
+
+    </LayoutItens>
   );
 }
 
