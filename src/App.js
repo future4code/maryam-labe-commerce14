@@ -3,6 +3,7 @@ import Filtro from './components/filtro/filtro.js';
 import Carrinho from './components/carrinho/carrinho.js';
 import styled from 'styled-components';
 import ListaDeProdutos from "./components/home/camisas.json";
+import FiltrosHome from "./components/home/home-filtros"
 import Card from "./components/home/card";
 
 const LayoutItens = styled.div`
@@ -104,21 +105,11 @@ class App extends React.Component {
 
         <Home>
 
-          <HomeFiltros>
-            <p>Quantidade de produtos: {newArray.length}</p>
-            <span>
-              <label for="sort">Ordenação: </label>
-              <select 
-              name="sort"
-              value={this.state.ordenacao}
-              onChange={this.atualizaOrdenacao}>
-                <option>Crescente</option>
-                <option>Decrescente</option>
-                <option>Ordem alfabética</option>
-              </select>
-            </span>
-            
-          </HomeFiltros>
+          <FiltrosHome 
+            quantidadeProdutos={newArray.length} 
+            ordenacao={this.state.ordenacao} 
+            atualizaOrdenacao={this.atualizaOrdenacao} 
+          />
           <HomeCards>
             {newArray}
           </HomeCards>
