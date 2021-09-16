@@ -64,6 +64,32 @@ class App extends React.Component {
 
 
   render() {
+    
+    const newArray = this.state.produtos
+    .filter(produto => {
+      return produto.name.toLowerCase().includes(this.state.valorPesquisaInput.toLowerCase())
+    })
+    .filter(produto => {
+      return this.state.valorMinimoInput === "" || produto.value >= this.state.valorMinimoInput
+    })
+    .filter(produto => {
+      return this.state.valorMaximoInput === "" || produto.value <= this.state.valorMaximoInput
+    })
+    .sort((produtoAtual, proximoProduto) => {
+      switch (this.state.ordenacao) {
+        case "Ordem alfabética":
+          return produtoAtual.name.localeCompare(proximoProduto.name)
+        case "Decrescente":
+          return proximoProduto.value - produtoAtual.value
+        default:
+          return produtoAtual.value - proximoProduto.value
+      }
+    })
+    .map(produto => {
+      return <Card nome={produto.name} id={produto.id} preco={produto.value} />
+    })
+
+
     return (
       <LayoutItens>
 
@@ -79,7 +105,7 @@ class App extends React.Component {
         <Home>
 
           <HomeFiltros>
-            <p>Quantidade de produtos: {this.state.quantidadeProdutos}</p>
+            <p>Quantidade de produtos: {newArray.length}</p>
             <span>
               <label for="sort">Ordenação: </label>
               <select 
@@ -94,29 +120,7 @@ class App extends React.Component {
             
           </HomeFiltros>
           <HomeCards>
-            {this.state.produtos
-              .filter(produto => {
-                return produto.name.toLowerCase().includes(this.state.valorPesquisaInput.toLowerCase())
-              })
-              .filter(produto => {
-                return this.state.valorMinimoInput === "" || produto.value >= this.state.valorMinimoInput
-              })
-              .filter(produto => {
-                return this.state.valorMaximoInput === "" || produto.value <= this.state.valorMaximoInput
-              })
-              .sort((produtoAtual, proximoProduto) => {
-                switch (this.state.ordenacao) {
-                  case "Ordem alfabética":
-                    return produtoAtual.name.localeCompare(proximoProduto.name)
-                  case "Decrescente":
-                    return proximoProduto.value - produtoAtual.value
-                  default:
-                    return produtoAtual.value - proximoProduto.value
-                }
-              })
-              .map(produto => {
-                return <Card nome={produto.name} id={produto.id} preco={produto.value} />
-              })}
+            {newArray}
           </HomeCards>
         </Home>
 
