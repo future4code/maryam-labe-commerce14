@@ -1,8 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
-// import TituloInputPesquisa from './inputs';
-// import TituloInputValor from './inputs';
-import { TituloInputValor, TituloInputPesquisa } from './inputs';
+import React from "react";
+import styled from "styled-components";
 
 const ContainerFiltro = styled.div`
     border: solid black 1px;
@@ -10,20 +7,43 @@ const ContainerFiltro = styled.div`
     width: 240px;
     padding-left: 20px;
     margin: 15px;
+    display: flex;
+    flex-direction: column;
 `
 
-class Filtro extends React.Component {
-    render() {
-        return (
-        <ContainerFiltro>
-            <h2>Filtros</h2>
-            <TituloInputValor texto={"Valor mínimo:"} />
-            <TituloInputValor texto={"Valor máximo:"}/>
-            <TituloInputPesquisa texto={"Busca por nome:"}/>
-        </ContainerFiltro>
-        )
-    }
+export function Filtro(props) {
+    return <ContainerFiltro>
 
+        <h2>Filtros</h2>
+
+        <label>Valor mínimo</label>
+        <input
+            type='number'
+            placeholder="Valor mínimo"
+            min='0'
+            max='infinite'
+            value={props.valorMinimoInput}
+            onChange={props.atualizaCampoValorMinimo}
+        />
+
+        <label>Valor máximo</label>
+        <input
+            type='number'
+            placeholder="Valor máximo"
+            min='0'
+            max='infinite'
+            value={props.valorMaximoInput}
+            onChange={props.atualizaCampoValorMaximo}
+        />
+
+        <label>Buscar por palavra</label>
+        <input
+            value={props.valorPesquisaInput}
+            onChange={props.atualizaCampoBusca}
+            type='text'
+            placeholder="Digite a palavra"
+        />
+    </ContainerFiltro>
 }
 
 export default Filtro;

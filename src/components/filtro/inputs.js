@@ -25,7 +25,7 @@ function TituloInputPesquisa(props){
     return (
         <ContainerInput >
             <TextoTituloInput>{props.texto}</TextoTituloInput>
-            <ValorInput type='text'/>
+            <ValorInput type='text' value={this.state.query}/>
         </ContainerInput >
     )
 }
