@@ -1,11 +1,23 @@
-.App {
-  text-align: center;
+.App { 
+
+ font-family: sans-serif;
+  background-color: #d9a7c7;
+  height: 100px;
+  min-width: 100vh;
+  color: #4b134f
+}
+
+.App ul {
+  color:#4b134f;
+background-color: white;
 }
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+  pointer-events: none; 
 }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
