@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "name": "aaaaProduto 1",
+        "value": 10000.0,
+        "imageUrl": "https://picsum.photos/200/200"
+    },
+
+    {
+        "id": 2,
+        "name": "bbProduto 2",
+        "value": 20000.0,
+        "imageUrl": "https://picsum.photos/200/200"
+    },
+
+    {
+        "id": 3,
+        "name": "blusaProduto 3",
+        "value": 10.0,
+        "imageUrl": "https://picsum.photos/200/200"
+    },
+
+    {
+        "id": 4,
+        "name": "Produto 4",
+        "value": 100.0,
+        "imageUrl": "https://picsum.photos/200/200"
+    },
+
+    {
+        "id": 5,
+        "name": "Produto 5",
+        "value": 1000.0,
+        "imageUrl": "https://picsum.photos/200/200"
+    },
+
+    {
+        "id": 6,
+        "name": "Produto 6",
+        "value": 1000000.0,
+        "imageUrl": "https://picsum.photos/200/200"
+    }
+]
